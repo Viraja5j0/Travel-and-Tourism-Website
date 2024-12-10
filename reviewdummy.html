@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Review</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin-left: 280px; margin-right: px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            background: linear-gradient(to right, purple, blue);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .rating input {
+            display: none;
+        }
+        .rating label {
+            font-size: 1.5em;
+            color: #ccc;
+            cursor: pointer;
+            padding: 0 5px;
+        }
+        .rating input:checked ~ label {
+            color: gold;
+        }
+        .rating input:hover ~ label {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Submit Your Travel Review</h1>
+    <h2>Share Your Experience with Us!</h2>
+    <form action="https://formspree.io/f/mgvebywb" method="post">
+        
+        <h3>Traveler Information</h3>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        
+        <label for="date-of-travel">Date of Travel:</label>
+        <input type="date" id="date-of-travel" name="date_of_travel" required>
+        
+        <h3>Trip Details</h3>
+        
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" placeholder="Destination (e.g., Paris, France)" required>
+        
+        <label for="type-of-travel">Type of Travel:</label>
+        <select id="type-of-travel" name="type_of_travel" required>
+            <option value="" disabled selected>Select Type</option>
+            <option value="business">Business</option>
+            <option value="leisure">Leisure</option>
+            <option value="family">Family</option>
+            <option value="romantic">Romantic</option>
+            <option value="solo">Solo</option>
+        </select>
+        
+        <h3>Rate Your Experience</h3>
+        
+        <label for="overall-rating">Overall Rating:</label>
+        <div class="rating" id="overall-rating">
+            <input type="radio" id="overall-5" name="overall_rating" value="5" required>
+            <label for="overall-5">★</label>
+            <input type="radio" id="overall-4" name="overall_rating" value="4">
+            <label for="overall-4">★</label>
+            <input type="radio" id="overall-3" name="overall_rating" value="3">
+            <label for="overall-3">★</label>
+            <input type="radio" id="overall-2" name="overall_rating" value="2">
+            <label for="overall-2">★</label>
+            <input type="radio" id="overall-1" name="overall_rating" value="1">
+            <label for="overall-1">★</label>
+        </div>
+        
+        <label for="accommodation-rating">Accommodation:</label>
+        <div class="rating" id="accommodation-rating">
+            <input type="radio" id="accommodation-5" name="accommodation_rating" value="5" required>
+            <label for="accommodation-5">★</label>
+            <input type="radio" id="accommodation-4" name="accommodation_rating" value="4">
+            <label for="accommodation-4">★</label>
+            <input type="radio" id="accommodation-3" name="accommodation_rating" value="3">
+            <label for="accommodation-3">★</label>
+            <input type="radio" id="accommodation-2" name="accommodation_rating" value="2">
+            <label for="accommodation-2">★</label>
+            <input type="radio" id="accommodation-1" name="accommodation_rating" value="1">
+            <label for="accommodation-1">★</label>
+        </div>
+        
+        <label for="activities-rating">Activities:</label>
+        <div class="rating" id="activities-rating">
+            <input type="radio" id="activities-5" name="activities_rating" value="5" required>
+            <label for="activities-5">★</label>
+            <input type="radio" id="activities-4" name="activities_rating" value="4">
+            <label for="activities-4">★</label>
+            <input type="radio" id="activities-3" name="activities_rating" value="3">
+            <label for="activities-3">★</label>
+            <input type="radio" id="activities-2" name="activities_rating" value="2">
+            <label for="activities-2">★</label>
+            <input type="radio" id="activities-1" name="activities_rating" value="1">
+            <label for="activities-1">★</label>
+        </div>
+        
+        <label for="dining-rating">Dining:</label>
+        <div class="rating" id="dining-rating">
+            <input type="radio" id="dining-5" name="dining_rating" value="5" required>
+            <label for="dining-5">★</label>
+            <input type="radio" id="dining-4" name="dining_rating" value="4">
+            <label for="dining-4">★</label>
+            <input type="radio" id="dining-3" name="dining_rating" value="3">
+            <label for="dining-3">★</label>
+            <input type="radio" id="dining-2" name="dining_rating" value="2">
+            <label for="dining-2">★</label>
+            <input type="radio" id="dining-1" name="dining_rating" value="1">
+            <label for="dining-1">★</label>
+        </div>
+        
+        <h3>Your Review</h3>
+        
+        <label for="title-of-review">Title of Review:</label>
+        <input type="text" id="title-of-review" name="title_of_review" placeholder="Review Title" required>
+        
+        <label for="detailed-review">Detailed Review:</label>
+        <textarea id="detailed-review" name="detailed_review" placeholder="Share your experience in detail..." rows="5" required></textarea>
+        
+        <input type="hidden" name="_redirect" value="https://formspree.io/success">
+
+        <button type="submit">Submit Review</button>
+    </form>
+    
+    <p>Note: All reviews are subject to moderation before being published. Thank you for your feedback!</p>
+</div>
+
+</body>
+</html>
